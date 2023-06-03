@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Maximos.master.cs" Inherits="Maximos" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtmll-transitional.dtd">
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+            <link rel=" stylesheet" href="css.css"/>
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <table border="1" cellpadding ="5" cellspacing ="0">
+        <tr>
+       <td align =" center">
+        <h1>Theory Test </h1>
+     </td>
+    </tr>
+    <tr>
+    <td align ="center">
+   <a href ="HomePage.aspx">Home Page   </a>
+    | <a href ="Intro.aspx">Info  </a>
+        <%=links %>
+        <center><%=logOutBtn %></center>
+    </td>
+     </tr>
+      <tr>
+      <td valign = "top">
+      <div>
+      <asp:ContentPlaceHolder ID ="ContentPlaceHolder1" runat ="server">
+      </asp:ContentPlaceHolder>
+       </div>
+        </td>
+       </tr>
+        <tr>
+            <td align ="left" >Created By Leo.for feedback-<a herf="leo.sidesbloom@gmail.com">leo.sidesbloom@gmail.com</a>
+        </td>
+         </tr>
+        </table> 
+      </body>
+     </html>

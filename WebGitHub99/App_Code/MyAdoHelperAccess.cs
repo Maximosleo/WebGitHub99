@@ -118,6 +118,21 @@ public class MyAdoHelper
 
         string printStr = "<table border='1' style='text - align:center' >";
 
+        printStr += "<th>First Name </th>";
+        printStr += "<th>Last Name </th>";
+        printStr += "<th>Email</th>";
+        printStr += "<th>Password </th>";
+        printStr += "<th>Age </th>";
+        printStr += "<th>ID </th>";
+        printStr += "<th>Gender </th>";
+        printStr += "<th>Gender </th>";
+        printStr += "<th>Living Area </th>";
+        printStr += "<th>Score </th>";
+        printStr += "<th>Merzedez </th>";
+        printStr += "<th>Audi </th>";
+        printStr += "<th>Is BMW </th>";
+        printStr += "<th>Is YOYOTA </th>";
+        
         foreach (DataRow row in dt.Rows)
         {
             printStr += "<tr>";
@@ -132,17 +147,4 @@ public class MyAdoHelper
         return printStr;
     }
 
-    public static int RowsSelected(string fileName, string sql)
-    {
-        DataTable dt = ExecuteDataTable(fileName, sql);
-
-        int count = 0;
-
-        foreach (DataRow row in dt.Rows)
-        {
-            count++;
-        }
-
-        return count;
-    }
 }

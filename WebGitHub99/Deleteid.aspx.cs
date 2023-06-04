@@ -12,6 +12,13 @@ public partial class Deleteid : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        if ((string)Session["isadmin"] != "yes")
+        {
+            Session["msg"] = "only admins can  view this page";
+            Response.Redirect("msg.aspx");
+        }
+
+
         string fileName = "Database31.accdb";
         string tablename = "Table0211";
         if (Request.Form["del_id"] != null)

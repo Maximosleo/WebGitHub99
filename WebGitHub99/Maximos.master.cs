@@ -20,12 +20,16 @@ public partial class Maximos : System.Web.UI.MasterPage
             Response.Redirect("HomePage.aspx");
         }
 
-        links += "| <a href ='SignUp.aspx'>sign up</a>";
+        links += " | <a href ='SignUp.aspx'>sign up</a>";
         links += "| <a href ='Login.aspx'>login</a>";
         if((string)Session["UserConnected"] == "yes")
         {
-         links = "| <a href ='Test.aspx'>Theory Test</a>";
-            logOutBtn = "<form method='post' action=''></p><input type='submit' id ='logOut' name = 'logOut' value = 'log out' /></form>";
+         links = " | <a href ='Test1.aspx'>Theory Test</a>";
+         logOutBtn = "<form method='post' action=''></p><input type='submit' id ='logOut' name = 'logOut' value = 'log out' /></form>";
+        }
+        if ((string )Session["isadmin"] == "yes")
+        {
+            links += " | <a href ='AdminPage.aspx'>Admin Page</a>";
         }
 }
 }

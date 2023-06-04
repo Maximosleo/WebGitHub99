@@ -5,15 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Results : System.Web.UI.Page
+public partial class AdminPage : System.Web.UI.Page
 {
-
     protected void Page_Load(object sender, EventArgs e)
     {
-        if ((string)Session["UserConnected"] != "yes")
+        if ((string)Session["isadmin"] != "yes")
         {
-            Session["msg"] = "only conected user can view this page";
+            Session["msg"] = "only admins can  view this page";
             Response.Redirect("msg.aspx");
         }
+
     }
 }

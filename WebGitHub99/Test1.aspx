@@ -1,7 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Maximos.master" AutoEventWireup="true" CodeFile="Test.aspx.cs" Inherits="Test" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Maximos.master" AutoEventWireup="true" CodeFile="Test1.aspx.cs" Inherits="Test1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-    <script type="text/javascript"  >
+    <script type ="text/javascript" >
+    var urlParams = new URLSearchParams(window.location.search);
+    var session = urlParams.get('number');
+
+    console.log(session);
+
     class Question {
         // Qustion =שם המחלקה
         title;
@@ -42,13 +47,20 @@
         updateUI11(currentIndex);
     });
 
-    nextButton.addEventListener("click", function () {
-        var selectedAnswer = 0;
-        for (let i = 0; i < answerElements.length; i++) {
-            if (answerElements[i].checked) {
-                selectedAnswer = i;
+    //nextButton.addEventListener("click", function () {
+    //    var selectedAnswer = 0;
+    //    for (let i = 0; i < answerElements.length; i++) {
+    //        if (answerElements[i].checked) {
+    //            selectedAnswer = i;
+    //        }
+    //    }
+        document.addEventListener("DOMContentLoaded", function () {
+            var selectedAnswer = 0;
+            for (let i = 0; i < answerElements.length; i++) {
+                if (answerElements[i].checked) {
+                    selectedAnswer = i;
+                }
             }
-        }
 
         var question11 = array11[currentIndex];
         if (selectedAnswer == question11.correctIndex) {
@@ -128,22 +140,15 @@
     }
     </script>
 </asp:Content>
-
-
-
-
-
-
-
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="text-center">
 
+   
     <h2>Question:</h2>
     <p id="question_id"></p>
 
     <h2>Answers:</h2>
-    <form id="answers" action="" method="post" >
+    <form id="answers" action="" >
         <input type="radio" id="answer0" name="answer" value="London11"/>
         <label for="answer0">London</label><br/>
         <input type="radio" id="answer1" name="answer" value="Berlin"/>
@@ -158,7 +163,9 @@
     <button id="previous" class="invisible11">Previous</button>
     <button id="next">Next</button>
     <button id="check" class="invisible11">check</button>
- <%--   <p><a id="resultLink" href="Results.aspx" class="invisible11">Go to the ResultsTest Page</a></p>--%>
+    <p><a id="resultLink" href="Results.aspx" class="invisible11">Go to the ResultsTest Page</a></p>
+
+
 </div>
 </asp:Content>
 

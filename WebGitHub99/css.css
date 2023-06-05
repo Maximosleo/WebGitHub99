@@ -1,13 +1,12 @@
 ﻿body {
     font-family: Arial, sans-serif;
-    background-color: #335533;
-    direction:rtl;
-    color: #333;
+    background-color: white;
+    direction: rtl;
+    color: black;
     line-height: 1.6em;
     margin: 0;
     padding: 0;
 }
-
 
 .text-center {
     text-align: center;
@@ -20,8 +19,8 @@
 }
 
 h1 {
-    color: olive;
-    text-align:center
+    color: #ff0000; /* Rainbow Color: Red */
+    text-align: center;
 }
 
 p {
@@ -30,23 +29,26 @@ p {
 }
 
 a {
-    color: #007BFF;
+    color: #ffa500; /* Rainbow Color: Orange */
     text-decoration: none;
 }
 
     a:hover {
-        color: #0056b3;
+        color: #ffff00; /* Rainbow Color: Yellow */
         text-decoration: underline;
     }
 
 .invisible11 {
     visibility: hidden;
 }
-table{
-    width:100%;
-    height:100%;
-    background-color:#DDFFDD
+
+table {
+    width: 100%;
+    height: 100vh; /* Set the height of the table to 100% of the viewport height */
+    background: linear-gradient( to right, #ff0000, #ffa500, #ffff00, #008000, #0000ff, #4b0082, #ee82ee ); /* Rainbow Gradient */
+    display: block; /* Added to override default table display behavior */
 }
+
 html {
     font-size: 14px;
 }
@@ -64,4 +66,118 @@ html {
 
 body {
     margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex: 1;
+}
+
+/* Glowing Buttons */
+button[type="submit"],
+input[type="submit"],
+button.button,
+a.button {
+    background-color: #ffd700; /* Gold Color */
+    color: #ffffff; /* White Text Color */
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7); /* Glowing Effect */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+    button[type="submit"]:hover,
+    input[type="submit"]:hover,
+    button.button:hover,
+    a.button:hover {
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.7); /* Increased Glowing Effect on Hover */
+    }
+
+/* Car Animation */
+.car-animation {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.car {
+    position: absolute;
+    top: calc(50% - 50px);
+    left: -200px;
+    width: 400px;
+    height: 100px;
+    background-color: #ff2800; /* Ferrari Red */
+    border-radius: 10px;
+    animation: carMove 20s infinite linear;
+}
+
+    .car:before {
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #e60000; /* Ferrari Dark Red */
+        border-radius: 10px;
+    }
+
+    .car .wheel {
+        position: absolute;
+        top: 75px;
+        width: 40px;
+        height: 40px;
+        background-color: #000000; /* Black Wheel */
+        border-radius: 50%;
+    }
+
+        .car .wheel.left {
+            left: 40px;
+        }
+
+        .car .wheel.right {
+            right: 40px;
+        }
+
+@keyframes carMove {
+    0% {
+        transform: translateX(-200px);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Capybara Animation */
+.capybara-animation {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.capybara {
+    position: absolute;
+    top: calc(50% - 50px);
+    left: -200px;
+    width: 100px;
+    height: 100px;
+    background-image: url('IMG/capybara-gangsta.gif'); /* Capybara Image */
+    background-size: cover;
+    animation: capybaraMove 20s infinite linear;
+}
+
+@keyframes capybaraMove {
+    0% {
+        transform: translateX(-200px);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
